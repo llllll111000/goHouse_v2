@@ -4,19 +4,23 @@ import "fmt"
 
 type StructAppliances struct {
 	Name string
+	Room string
 }
 
 func InitAppliances() []StructAppliances {
-	tv := StructAppliances{"телевизор"}
-	computer := StructAppliances{"компьютер"}
-	washingMachine := StructAppliances{"стиральная машина"}
-	fridge := StructAppliances{"холодильник"}
-	kettle := StructAppliances{"чайник"}
-	return []StructAppliances{tv, computer, washingMachine, fridge, kettle}
+	appliances := []StructAppliances{
+		{"телевизор", "Гостинная"},
+		{"компьютер", "Кабинет"},
+		{"стиральная машина", "Ванная"},
+		{"холодильник", "Кухня"},
+		{"чайник", "Кухня"},
+	}
+	return appliances
 }
 
 func ShowAppliances(appliances []StructAppliances) {
+	fmt.Println("\nТехника:")
 	for _, ObjAppliances := range appliances {
-		fmt.Println(ObjAppliances.Name, " ")
+		fmt.Printf("%s (%s)\n", ObjAppliances.Name, ObjAppliances.Room)
 	}
 }

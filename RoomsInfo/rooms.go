@@ -10,14 +10,19 @@ type RoomsStruct struct {
 }
 
 func InitRooms() []RoomsStruct {
-	livingRoom := RoomsStruct{"гостинная", 400, 250, 600}
-	kitchen := RoomsStruct{"кухня", 400, 250, 500}
-	bedroom := RoomsStruct{"спальня", 400, 300, 550}
-	return []RoomsStruct{livingRoom, kitchen, bedroom}
+	rooms := []RoomsStruct{
+		{"Гостинная", 4, 2, 6},
+		{"Кухня", 4, 2, 5},
+		{"Спальня", 4, 3, 5},
+		{"Кабинет", 4, 3, 4},
+		{"Ванная", 3, 3, 4},
+	}
+	return rooms
 }
 
-func ShowRooms(cm []RoomsStruct) {
-	for _, size := range cm {
-		fmt.Print("Комната: %s\nВысота: %d\nШирина: %d\nДлина: %d", cm.Name, cm.h, cm.w, cm.l)
+func ShowRooms(rooms []RoomsStruct) {
+	fmt.Println("\nМой дом:")
+	for _, room := range rooms {
+		fmt.Printf("Комната: %s \nПлощадь: %d кв м\n", room.Name, room.w*room.l)
 	}
 }

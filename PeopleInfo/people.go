@@ -9,12 +9,16 @@ type StructPeople struct {
 }
 
 func InitPeople() []StructPeople {
-	person_1 := StructPeople{"Томас", "Шелби", 55}
-	person_2 := StructPeople{"Игорь", "Крутой", 69}
+	people := []StructPeople{
+		{"Томас", "Шелби", 55},
+		{"Игорь", "Крутой", 69},
+	}
+	return people
 }
 
 func ShowPeople(people []StructPeople) {
+	fmt.Println("\nЖители дома:")
 	for _, person := range people {
-		fmt.Println("Имя: %s\nФамилия: %s\nВозраст: %d", person.fName, person.lName, person.Age)
+		fmt.Printf("Имя: %s\nФамилия: %s\nВозраст: %d\n", person.fName, person.lName, person.Age)
 	}
 }
